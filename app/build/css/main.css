@@ -1,0 +1,29 @@
+body {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+#gamebar {
+    background: #000;
+    width: 100%;
+    color: #FFF;
+    margin: 0 0 40px 0;
+    padding: 50px 0;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#gamebar .name-field {
+    margin-top: 20px;
+}
+
+#gamebar .players-bar {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    padding: 15px;
+    box-sizing: border-box;
+}
+#gamebar .players-bar .player1 { float: left; }
+#gamebar .players-bar .player2 { float: right; }

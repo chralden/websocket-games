@@ -1,0 +1,6 @@
+{
+    "src": "frontend/",
+    "dest": "app/build/",
+    "tasks": "grunt-tasks/",
+    "jsDir": "js/"
+}
