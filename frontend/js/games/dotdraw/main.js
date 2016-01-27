@@ -39,15 +39,11 @@ module.exports = function dotDraw(canvas){
 
         var state = [];
 
-        canvas.animate(function(){
-
-            state.forEach(function(action){
-				console.log(action);
-                
-
-            });
-
+        /* IF WE WANT OUR GAME TO ANIMATE ON A LOOP
+		canvas.animate(function(){
+			
         });
+		*/
 
         user.on('user action', function(action){
 			if(action){
