@@ -39,27 +39,31 @@ var canvas = {
 
     listeners: function() {
         var self = this;
+    },
 
-        $(self.el).on('click', function(event){
-			console.log(event);
-            // only emit the click action if the user is playing
-            if(user.status === 'PLAY'){
-				
-                var bounds = self.el.getBoundingClientRect(),
-                    clickAction = {
-                        type: 'click',
-                        payload: {
-                            x: event.clientX - bounds.left,
-                            y: event.clientY - bounds.top,
-                            color: user.profile.color
-                        }
-                    };
-
-                user.emit('user action', clickAction);
-            }
-
+    click: function(onClick) {
+        var self = this;
+        $(self.el).on('click',function(event){
+            var bounds = self.el.getBoundingClientRect();
+            var x = event.clientX - bounds.left,
+            y = event.clientY - bounds.top;
+            onClick(x,y);
         });
+    },
 
+    keypress: function(onKeyPress){
+        var self = this;
+        var lastDownTarget;
+        document.addEventListener('mousedown', function(event) {
+            lastDownTarget = event.target;
+        }, false);
+
+        document.addEventListener('keydown', function(event) {
+            if(lastDownTarget == self.el) {
+                event.preventDefault();
+                onKeyPress(event.keyCode);
+            }
+        }, false);
     },
 
     animate: function(animation) {

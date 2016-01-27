@@ -14,7 +14,7 @@ function randomColor() {
 module.exports = function dotDraw(canvas){
 
     // the assets we need for our game
-    var context = canvas.context;
+    var context = canvas.context,
 
     //## Game States
     START = '_START_',
@@ -28,7 +28,7 @@ module.exports = function dotDraw(canvas){
         user.profile = {
 			color: randomColor()
 		};
-        
+
         WSGame.goTo(PLAY);
     });
 
@@ -41,9 +41,28 @@ module.exports = function dotDraw(canvas){
 
         /* IF WE WANT OUR GAME TO ANIMATE ON A LOOP
 		canvas.animate(function(){
-			
+
         });
 		*/
+
+        canvas.click(function(x,y){
+            if (user.status === PLAY){
+                var clickAction = {
+                    type: 'click',
+                    payload: {
+                        x: x,
+                        y: y,
+                        color: user.profile.color
+                    }
+                };
+                user.emit('user action', clickAction);
+            }
+        });
+
+        canvas.keypress(function(keycode){
+            console.log('on key press',keycode);
+            // 37, 38, 39, 40 -> left, up, right, down
+        });
 
         user.on('user action', function(action){
 			if(action){
