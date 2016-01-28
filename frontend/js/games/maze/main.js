@@ -1,9 +1,9 @@
 
-//> Maze 
+//> Maze
 module.exports = function maze(canvas){
 
     // the assets we need for our game
-    var context = canvas.context;
+    var context = canvas.context,
 
     //## Game States
     START = '_START_',
@@ -14,8 +14,8 @@ module.exports = function maze(canvas){
     // start screen
     WSGame.define(START, function start() {
         // this is where start stuff would go
-        
-        
+
+
         WSGame.goTo(PLAY);
     });
 
@@ -26,7 +26,7 @@ module.exports = function maze(canvas){
 
         var state = [];
 
-        
+
 
     });
 
