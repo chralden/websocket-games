@@ -3,7 +3,8 @@
 //### Games Registry
 
 var games = {
-    'dotdraw': './dotdraw/main.js'
+    'dotdraw': require('../games/dotdraw/main.js'),
+	'maze': require('../games/maze/main.js')
 };
 
 module.exports = games;
