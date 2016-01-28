@@ -8,7 +8,7 @@ function randomColor() {
         b = randomIntBetween(0, 255);
 
     return 'rgb(' + r + ',' + g + ',' + b + ')';
-};
+}
 
 //> A test game -- draw dots
 module.exports = function dotDraw(canvas){

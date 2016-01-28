@@ -2,19 +2,19 @@
 //> Load all script dependencies for Websocket Games
 //> This application uses Browserify [http://browserify.org/] to manage modules.
 
-    //### Load components
+//### Load components
 
-    // Object.create Polyfill
+// Object.create Polyfill
 var createFill = require('./components/create.js'),
 
-    // games mediator, runs code for specific games based on hash
-    games = require('./games/games-mediator.js'),
+// games mediator, runs code for specific games based on hash
+games = require('./games/games-mediator.js'),
 
-    // state machine factory
-    state = require('./components/state-machine.js'),
+// state machine factory
+state = require('./components/state-machine.js'),
 
-    // game bar ui element
-    gamebar = require('./ui/GameBar.jsx');
+// game bar ui element
+gamebar = require('./ui/GameBar.jsx');
 
 
 // instantiate global websocket object as user
