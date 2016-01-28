@@ -8,7 +8,7 @@ function randomColor() {
         b = randomIntBetween(0, 255);
 
     return 'rgb(' + r + ',' + g + ',' + b + ')';
-};
+}
 
 //> A test game -- draw dots
 module.exports = function dotDraw(canvas){
@@ -28,7 +28,7 @@ module.exports = function dotDraw(canvas){
         user.profile = {
 			color: randomColor()
 		};
-        
+
         WSGame.goTo(PLAY);
     });
 
@@ -41,7 +41,7 @@ module.exports = function dotDraw(canvas){
 
         /* IF WE WANT OUR GAME TO ANIMATE ON A LOOP
 		canvas.animate(function(){
-			
+
         });
 		*/
 

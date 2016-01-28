@@ -2,36 +2,35 @@
 
 //### Load Dependencies
 
-    // canvas animation object factory
+// canvas animation object factory
 var canvas = require('../components/canvas.js'),
 
-    // registry of available games
-    games = require('../games/registry.js');
+// registry of available games
+gamesList = require('../games/registry.js');
 
 //### Games Mediator
 
 var gamesMediator = function(){
-
-    var game = window.location.hash.replace('#', '') || false;
-
+    var gameName = window.location.hash.replace('#', '') || false;
     $(function main() {
-
         // create the game canvas
         var gameCanvas = canvas({
             el: document.getElementById('game'),
         });
 
-        if(game){
-
-            // using the specified game, update the game canvas
-            games[game](gameCanvas);
-
-        }else{
-             console.log('Websocket Games: No game selected.');
+        if(gameName){
+            if (gamesList[gameName] === undefined){
+                console.log('Websocket Games: Unknown Game selected.');
+            }
+            else {
+                // using the specified game, update the game canvas
+                gamesList[gameName](gameCanvas);
+            }
         }
-
+        else{
+            console.log('Websocket Games: No game selected.');
+        }
     });
-
 };
 
 module.exports = gamesMediator;
