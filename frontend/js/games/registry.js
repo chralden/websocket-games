@@ -4,7 +4,8 @@
 
 var games = {
 
-    'dotdraw': require('../games/dotdraw/main.js')
+    'dotdraw': require('../games/dotdraw/main.js'),
+	'maze': require('../games/maze/main.js')
 
 };
 
