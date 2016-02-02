@@ -8,19 +8,6 @@ function Tile(x,y){
     this.visited = false;
 }
 
-// grids have their origin in their upper left corner
-function Maze(width,height){
-    this.width = width;
-    this.height = height;
-    this.grid = new Array(width);
-    for (var x = 0; x < width; x++){
-        this.grid[x] = new Array(height);
-        for (var y=0; y < height; y++){
-            this.grid[x][y] = new Tile(x,y);
-        }
-    }
-}
-
 function createMaze(width,height){
     var maze = new Array(width);
     maze.width = width;
