@@ -92,6 +92,7 @@ var canvas = {
         function calcSize() {
             self.el.width = window.innerWidth;
             self.el.height = window.innerHeight;
+            console.log('resize');
         }
 
         $(window).on('resize', calcSize);
@@ -102,7 +103,6 @@ var canvas = {
 
 // return a new canvas object initialized with given configuration
 module.exports = function(config) {
-
     var c = Object.create(canvas);
     c.init(config);
     return c;
